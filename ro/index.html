@@ -6,92 +6,136 @@
   <title>Solo Business OS</title>
   <meta name="description" content="Un sistem practic pentru freelanceri și solo founders care vor să-și ruleze business-ul cu mai puțin haos și mai mult control.">
   <style>
-    :root{--text:#111;--muted:#5b5b5b;--border:#ddd;--bg:#fff;--soft:#f7f7f7}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:860px;margin:40px auto;padding:0 20px;line-height:1.65;color:var(--text);background:var(--bg)}
-    h1,h2,h3{line-height:1.2;margin-top:0}
-    h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
-    h2{margin-top:42px;font-size:1.5rem}
-    p,li{font-size:1.04rem}
-    .eyebrow,.muted{color:var(--muted)}
-    .hero{padding:10px 0 22px}
-    .cta{display:inline-block;background:#111;color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
-    .cta.secondary{background:#fff;color:#111;border:1px solid #111}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .box{padding:18px;border:1px solid var(--border);border-radius:12px;margin:22px 0;background:var(--soft)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
-    .card{border:1px solid var(--border);border-radius:12px;padding:16px;background:#fff}
-    ul{padding-left:20px}
-    .section-note{font-size:.95rem;color:var(--muted)}
-    footer{margin:48px 0 24px;color:var(--muted);font-size:.95rem}
-    a{color:inherit}
+    :root{
+      --bg:#0f1220;--bg2:#171b2e;--panel:#ffffff;--text:#101320;--muted:#5e657d;--line:#e6e8f0;
+      --accent:#6d5efc;--accent2:#11c5bf;--accent3:#ffb84d;--soft:#f6f7fb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.65;background:linear-gradient(180deg,var(--bg) 0%, #13172a 35%, #f5f7fc 35%, #f5f7fc 100%);color:var(--text)}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+    .topbar{display:flex;justify-content:flex-end;align-items:center;padding:18px 0}
+    .lang-switch{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:6px;border-radius:999px;backdrop-filter:blur(8px)}
+    .lang-switch a{font-size:.86rem;text-decoration:none;padding:6px 10px;border-radius:999px;color:#dfe4ff}
+    .lang-switch a.active{background:#fff;color:#111;font-weight:700}
+    .hero{padding:22px 0 54px;color:#fff}
+    .eyebrow{display:inline-block;font-size:.9rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#b7c0ff;background:rgba(255,255,255,.08);padding:8px 12px;border-radius:999px}
+    h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.02;margin:18px 0 18px;max-width:900px}
+    .lead{font-size:1.15rem;max-width:760px;color:#d7dcf7}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+    .cta{display:inline-block;text-decoration:none;padding:14px 20px;border-radius:14px;font-weight:800}
+    .cta.primary{background:linear-gradient(135deg,var(--accent),#8f84ff);color:#fff;box-shadow:0 12px 30px rgba(109,94,252,.35)}
+    .cta.secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.15)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:34px}
+    .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:22px;border-radius:22px;backdrop-filter:blur(10px)}
+    .hero-card h3{margin:0 0 12px;font-size:1.05rem;color:#fff}
+    .hero-card ul{margin:0;padding-left:18px;color:#dce3ff}
+    .hero-card li{margin:8px 0}
+    .content{padding:34px 0 68px}
+    .section{margin:26px 0;padding:28px;background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:0 14px 40px rgba(18,22,40,.05)}
+    .section h2{font-size:1.7rem;margin:0 0 12px}
+    .section p{margin:0 0 14px}
+    .notice{background:linear-gradient(135deg,#f4f1ff,#eefdfa);border:1px solid #dfe4ff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .card{padding:18px;border-radius:18px;background:var(--soft);border:1px solid var(--line)}
+    .card strong{display:block;margin-bottom:6px}
+    .muted{color:var(--muted)}
+    .email-box{background:linear-gradient(135deg,#fff7ea,#f7f2ff);border:1px solid #f0e0c2}
+    footer{padding:0 0 44px;color:#5f647a}
+    footer a{color:inherit}
+    @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.topbar{padding:14px 0}.hero{padding-top:8px}}
   </style>
 </head>
 <body>
-  <div class="hero">
-    <p class="eyebrow">Solo Business OS</p>
-    <h1>Rulează-ți business-ul de o singură persoană cu mai puțin haos și mai mult control.</h1>
-    <p>Un sistem practic pentru freelanceri și solo founders care vor să țină lead-urile, ofertele, planificarea săptămânală, task-urile și contentul într-un singur loc.</p>
-    <div class="cta-row">
-      <a class="cta" href="mailto:micutzu.workspace@gmail.com?subject=Solo%20Business%20OS%20Early%20Access">Intră în early access</a>
-      <a class="cta secondary" href="/">English version</a>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="lang-switch">
+        <a href="/">EN</a>
+        <a class="active" href="/ro/">RO</a>
+      </div>
     </div>
+
+    <section class="hero">
+      <span class="eyebrow">Solo Business OS</span>
+      <h1>Rulează-ți business-ul de o singură persoană cu mai puțin haos și mai mult control.</h1>
+      <p class="lead">Un sistem practic pentru freelanceri și solo founders care vor să țină lead-urile, ofertele, planificarea săptămânală, task-urile și contentul într-un singur loc.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="mailto:micutzu.workspace@gmail.com?subject=Solo%20Business%20OS%20Early%20Access">Intră în early access</a>
+        <a class="cta secondary" href="#de-ce">Vezi ce te ajută să organizezi</a>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h3>Construit pentru operatori practici</h3>
+          <ul>
+            <li>Fără hype, fără urgență falsă, fără promisiuni de venit.</li>
+            <li>Focus pe claritate, follow-through și ritm operațional.</li>
+            <li>Gândit pentru business-uri solo, nu pentru echipe umflate.</li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <h3>Ce acoperă</h3>
+          <ul>
+            <li>Lead tracking</li>
+            <li>Offer pipeline</li>
+            <li>Weekly planning</li>
+            <li>Content tracking</li>
+            <li>Mini SOP library</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <main class="content">
+      <section id="de-ce" class="section notice">
+        <h2>De ce există</h2>
+        <p>Dacă lucrezi solo, partea de business ajunge rapid împărțită între chat-uri, note, inbox-uri, spreadsheet-uri și prea multe tool-uri. Rezultatul nu este lipsa de ambiție. Este zgomotul operațional.</p>
+      </section>
+
+      <section class="section">
+        <h2>Ce se rupe de obicei prima dată</h2>
+        <div class="grid">
+          <div class="card"><strong>Follow-up-uri ratate</strong><span class="muted">Oportunitățile dispar fiindcă nimic nu urmărește clar următorul pas.</span></div>
+          <div class="card"><strong>Priorități neclare</strong><span class="muted">Totul pare important, iar execuția se fragmentează.</span></div>
+          <div class="card"><strong>Oferte fără pipeline</strong><span class="muted">Trimiți propuneri, dar partea de business nu are un ritm clar.</span></div>
+          <div class="card"><strong>Haos în content</strong><span class="muted">Ideile, drafturile și publicarea sunt împrăștiate peste tot.</span></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Ce te ajută să organizezi</h2>
+        <div class="grid">
+          <div class="card"><strong>Dashboard overview</strong><span class="muted">Vezi într-un singur loc piesele în mișcare ale business-ului.</span></div>
+          <div class="card"><strong>Lead tracker</strong><span class="muted">Ții oportunitățile active vizibile și acționabile.</span></div>
+          <div class="card"><strong>Offer pipeline</strong><span class="muted">Urmărești ofertele, statusul și următorii pași fără guesswork.</span></div>
+          <div class="card"><strong>Weekly planner</strong><span class="muted">Setezi priorități și legi munca de rezultate.</span></div>
+          <div class="card"><strong>Content tracker</strong><span class="muted">Gestionezi idei, drafturi și publicare cu mai puțină fricțiune.</span></div>
+          <div class="card"><strong>Mini SOP library</strong><span class="muted">Construiești obiceiuri repetabile în loc să te bazezi pe memorie.</span></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Pentru cine este</h2>
+        <div class="grid">
+          <div class="card"><strong>Freelanceri</strong><span class="muted">Oameni care vând servicii și gestionează singuri livrarea și creșterea.</span></div>
+          <div class="card"><strong>Consultanți</strong><span class="muted">Operatori solo care au nevoie de vizibilitate peste muncă, lead-uri și oferte.</span></div>
+          <div class="card"><strong>Solo founders</strong><span class="muted">Builders care vor un strat operațional simplu înainte să adauge mai multe tool-uri.</span></div>
+          <div class="card"><strong>Operatori digitali mici</strong><span class="muted">Business-uri lean care au nevoie mai mult de claritate decât de complexitate.</span></div>
+        </div>
+      </section>
+
+      <section class="section email-box">
+        <h2>Early access</h2>
+        <p>Pregătesc acum prima versiune. Dacă vrei să o vezi când e gata, intră în lista de early access prin email.</p>
+        <div class="cta-row">
+          <a class="cta primary" href="mailto:micutzu.workspace@gmail.com?subject=Solo%20Business%20OS%20Early%20Access">Intră în early access</a>
+        </div>
+        <p class="muted" style="margin-top:14px">Dacă ne contactezi pentru early access, poți cere oricând retragerea consimțământului sau ștergerea datelor. <a href="/ro/privacy/">Privacy notice</a></p>
+      </section>
+    </main>
+
+    <footer>
+      Solo Business OS este construit ca produs digital practic pentru business-uri de o singură persoană. Early access este folosit doar pentru update-uri de lansare și notificări despre disponibilitatea produsului.
+    </footer>
   </div>
-
-  <div class="box">
-    <strong>Fără hype, fără urgență falsă, fără promisiuni de venit.</strong><br>
-    Doar un sistem practic pentru oameni care construiesc un business real de o singură persoană.
-  </div>
-
-  <h2>De ce există</h2>
-  <p>Dacă lucrezi solo, partea de business ajunge rapid împărțită între chat-uri, note, inbox-uri, spreadsheet-uri și prea multe tool-uri. Problema nu e lipsa de ambiție. Problema e zgomotul operațional.</p>
-
-  <div class="grid">
-    <div class="card"><strong>Follow-up-uri ratate</strong><br><span class="section-note">Oportunitățile dispar fiindcă nimic nu urmărește clar următorul pas.</span></div>
-    <div class="card"><strong>Priorități neclare</strong><br><span class="section-note">Totul pare important, iar execuția se fragmentează.</span></div>
-    <div class="card"><strong>Oferte fără pipeline</strong><br><span class="section-note">Trimiți propuneri, dar partea de business nu are un ritm clar.</span></div>
-    <div class="card"><strong>Haos în content</strong><br><span class="section-note">Ideile, drafturile și publicarea sunt împrăștiate peste tot.</span></div>
-  </div>
-
-  <h2>Ce te ajută să organizezi</h2>
-  <div class="grid">
-    <div class="card"><strong>Dashboard overview</strong><br><span class="section-note">Vezi într-un singur loc piesele în mișcare ale business-ului.</span></div>
-    <div class="card"><strong>Lead tracker</strong><br><span class="section-note">Ții oportunitățile active vizibile și acționabile.</span></div>
-    <div class="card"><strong>Offer pipeline</strong><br><span class="section-note">Urmărești ofertele, statusul și următorii pași fără guesswork.</span></div>
-    <div class="card"><strong>Weekly planner</strong><br><span class="section-note">Setezi priorități și legi munca de rezultate.</span></div>
-    <div class="card"><strong>Content tracker</strong><br><span class="section-note">Gestionezi idei, drafturi și publicare cu mai puțină fricțiune.</span></div>
-    <div class="card"><strong>Mini SOP library</strong><br><span class="section-note">Construiești obiceiuri repetabile în loc să te bazezi pe memorie.</span></div>
-  </div>
-
-  <h2>Pentru cine este</h2>
-  <ul>
-    <li>freelanceri</li>
-    <li>consultanți</li>
-    <li>solo founders</li>
-    <li>operatori digitali mici</li>
-  </ul>
-
-  <h2>Pentru cine nu este</h2>
-  <ul>
-    <li>echipe mai mari</li>
-    <li>nevoi enterprise de CRM</li>
-    <li>operațiuni complexe multi-user</li>
-  </ul>
-
-  <h2>Early access</h2>
-  <p>Pregătesc acum prima versiune. Dacă vrei să o vezi când e gata, intră în lista de early access prin email.</p>
-
-  <div class="box">
-    <p><strong>Intră în early access prin email</strong></p>
-    <p>Folosește butonul de mai jos pentru a trimite simplu o cerere de early access.</p>
-    <p><a class="cta" href="mailto:micutzu.workspace@gmail.com?subject=Solo%20Business%20OS%20Early%20Access">Intră în early access</a></p>
-    <small>
-      Dacă ne contactezi pentru early access, poți cere oricând retragerea consimțământului sau ștergerea datelor.
-      <a href="/privacy-notice.md">Privacy notice</a>
-    </small>
-  </div>
-
-  <footer>
-    Solo Business OS este construit ca produs digital practic pentru business-uri de o singură persoană. Early access este folosit doar pentru update-uri de lansare și notificări despre disponibilitatea produsului.
-  </footer>
 </body>
 </html>
