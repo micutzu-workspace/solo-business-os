@@ -6,50 +6,61 @@
   <title>Solo Business OS</title>
   <meta name="description" content="A practical system for freelancers and solo founders who want to run a one-person business with less chaos and more control.">
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#111}
-    h1,h2{line-height:1.2}
-    .cta{display:inline-block;background:#111;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:600}
-    .muted{color:#555}
-    .box{padding:18px;border:1px solid #ddd;border-radius:10px;margin:20px 0}
+    :root{--text:#111;--muted:#5b5b5b;--border:#ddd;--bg:#fff;--soft:#f7f7f7}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:860px;margin:40px auto;padding:0 20px;line-height:1.65;color:var(--text);background:var(--bg)}
+    h1,h2,h3{line-height:1.2;margin-top:0}
+    h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
+    h2{margin-top:42px;font-size:1.5rem}
+    p,li{font-size:1.04rem}
+    .eyebrow,.muted{color:var(--muted)}
+    .hero{padding:10px 0 22px}
+    .cta{display:inline-block;background:#111;color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .cta.secondary{background:#fff;color:#111;border:1px solid #111}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .box{padding:18px;border:1px solid var(--border);border-radius:12px;margin:22px 0;background:var(--soft)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+    .card{border:1px solid var(--border);border-radius:12px;padding:16px;background:#fff}
     ul{padding-left:20px}
-    form{border:1px solid #ddd;border-radius:10px;padding:18px;margin-top:18px}
-    input[type=email]{width:100%;padding:12px;font-size:16px;margin:8px 0 12px;border:1px solid #bbb;border-radius:8px;box-sizing:border-box}
-    label{display:block;margin:8px 0}
-    button{background:#111;color:#fff;border:none;padding:12px 18px;border-radius:8px;font-weight:600;cursor:pointer}
-    small{display:block;color:#555;margin-top:10px}
+    .section-note{font-size:.95rem;color:var(--muted)}
+    footer{margin:48px 0 24px;color:var(--muted);font-size:.95rem}
+    a{color:inherit}
   </style>
 </head>
 <body>
-  <p class="muted">Solo Business OS</p>
-  <h1>Run your one-person business with less chaos and more control.</h1>
-  <p>A practical system for freelancers and solo founders who want to organize leads, offers, weekly planning, tasks, and content in one place.</p>
-  <p><a class="cta" href="#early-access">Join the early access list</a></p>
+  <div class="hero">
+    <p class="eyebrow">Solo Business OS</p>
+    <h1>Run your one-person business with less chaos and more control.</h1>
+    <p>A practical system for freelancers and solo founders who want to keep leads, offers, weekly planning, tasks, and content in one place.</p>
+    <div class="cta-row">
+      <a class="cta" href="mailto:micutzu.workspace@gmail.com?subject=Solo%20Business%20OS%20Early%20Access">Join early access</a>
+      <a class="cta secondary" href="/ro/">Versiune în română</a>
+    </div>
+  </div>
 
   <div class="box">
     <strong>No hype, no fake urgency, no income promises.</strong><br>
     Just a practical system for people building a real one-person business.
   </div>
 
-  <h2>The problem</h2>
-  <p>If you work solo, your business often ends up spread across chats, notes, inboxes, and too many tools.</p>
-  <ul>
-    <li>missed follow-ups</li>
-    <li>unclear priorities</li>
-    <li>offers without a visible pipeline</li>
-    <li>content handled inconsistently</li>
-    <li>too much operational noise</li>
-  </ul>
+  <h2>Why this exists</h2>
+  <p>If you work solo, the business side often gets split across chats, notes, inboxes, spreadsheets, and too many tools. The result is not a lack of ambition. It is operational noise.</p>
 
-  <h2>The solution</h2>
-  <p>Solo Business OS gives you a simple structure to run the core parts of a one-person business:</p>
-  <ul>
-    <li>dashboard overview</li>
-    <li>lead tracker</li>
-    <li>offer pipeline</li>
-    <li>weekly planner</li>
-    <li>content tracker</li>
-    <li>mini SOP library</li>
-  </ul>
+  <div class="grid">
+    <div class="card"><strong>Missed follow-ups</strong><br><span class="section-note">Opportunities disappear because nothing tracks the next step clearly.</span></div>
+    <div class="card"><strong>Unclear priorities</strong><br><span class="section-note">Everything feels important, so execution gets fragmented.</span></div>
+    <div class="card"><strong>Offers with no pipeline</strong><br><span class="section-note">You send proposals, but the business side has no real operating rhythm.</span></div>
+    <div class="card"><strong>Content chaos</strong><br><span class="section-note">Ideas, drafts, and publishing are spread everywhere.</span></div>
+  </div>
+
+  <h2>What Solo Business OS helps you organize</h2>
+  <div class="grid">
+    <div class="card"><strong>Dashboard overview</strong><br><span class="section-note">See the moving parts of the business in one place.</span></div>
+    <div class="card"><strong>Lead tracker</strong><br><span class="section-note">Keep active opportunities visible and actionable.</span></div>
+    <div class="card"><strong>Offer pipeline</strong><br><span class="section-note">Track quotes, status, and next actions without guesswork.</span></div>
+    <div class="card"><strong>Weekly planner</strong><br><span class="section-note">Set priorities and keep work tied to outcomes.</span></div>
+    <div class="card"><strong>Content tracker</strong><br><span class="section-note">Manage ideas, drafts, and publishing with less friction.</span></div>
+    <div class="card"><strong>Mini SOP library</strong><br><span class="section-note">Create repeatable habits instead of relying on memory.</span></div>
+  </div>
 
   <h2>Who it is for</h2>
   <ul>
@@ -63,20 +74,24 @@
   <ul>
     <li>larger teams</li>
     <li>enterprise CRM needs</li>
-    <li>complex multi-user businesses</li>
+    <li>complex multi-user operations</li>
   </ul>
 
-  <h2 id="early-access">Early access</h2>
-  <p>Join the early access list to get notified when the first version is ready and receive closely related launch updates.</p>
+  <h2>Early access</h2>
+  <p>I’m preparing the first version now. If you want to see it when it is ready, join the early-access list by email.</p>
 
   <div class="box">
     <p><strong>Join early access by email</strong></p>
-    <p>If you want to join the early-access list, send an email with the subject line below:</p>
+    <p>Use the button below to send a simple early-access request.</p>
     <p><a class="cta" href="mailto:micutzu.workspace@gmail.com?subject=Solo%20Business%20OS%20Early%20Access">Join early access</a></p>
     <small>
       By contacting us for early access, you can ask to withdraw or delete your data at any time.
       <a href="privacy-notice.md">Privacy notice</a>
     </small>
   </div>
+
+  <footer>
+    Solo Business OS is being built as a practical digital product for one-person businesses. Early access is for launch updates and product release notifications only.
+  </footer>
 </body>
 </html>
