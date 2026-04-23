@@ -12,6 +12,11 @@
     .muted{color:#555}
     .box{padding:18px;border:1px solid #ddd;border-radius:10px;margin:20px 0}
     ul{padding-left:20px}
+    form{border:1px solid #ddd;border-radius:10px;padding:18px;margin-top:18px}
+    input[type=email]{width:100%;padding:12px;font-size:16px;margin:8px 0 12px;border:1px solid #bbb;border-radius:8px;box-sizing:border-box}
+    label{display:block;margin:8px 0}
+    button{background:#111;color:#fff;border:none;padding:12px 18px;border-radius:8px;font-weight:600;cursor:pointer}
+    small{display:block;color:#555;margin-top:10px}
   </style>
 </head>
 <body>
@@ -62,7 +67,22 @@
   </ul>
 
   <h2 id="early-access">Early access</h2>
-  <p>Join the early access list to get notified when the first version is ready, receive early pricing, and help shape the next version.</p>
-  <p class="muted">Form integration goes here.</p>
+  <p>Join the early access list to get notified when the first version is ready and receive closely related launch updates.</p>
+
+  <form>
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+    <label>
+      <input type="checkbox" name="consent" required>
+      I agree to receive early-access and launch updates about Solo Business OS. I understand I can withdraw my consent at any time.
+    </label>
+
+    <button type="submit">Join early access</button>
+    <small>
+      We only ask for your email so we can manage the early-access list and send closely related updates about Solo Business OS.
+      <a href="privacy-notice.md">Privacy notice</a>
+    </small>
+  </form>
 </body>
 </html>
